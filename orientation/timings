@@ -1,0 +1,25 @@
+Know your timings
+
+- nines - https://en.wikipedia.org/wiki/High_availability
+    - 1: 036.53 D
+    - 2: 003.65 D
+    - 3: 008.77 H
+    - 4: 052.60 M
+    - 5: 005.26 M
+    - 6: 031.56 S
+    - 7: 003.16 S
+    - 8: 315.58 ms
+    - 9: 031.56 ms
+
+- speeds - http://norvig.com/21-days.html
+    - execute typical instruction           1/1,000,000,000 sec = 1 nanosec
+    - fetch from L1 cache memory            0.5 nanosec
+    - branch misprediction                  5 nanosec
+    - fetch from L2 cache memory            7 nanosec
+    - Mutex lock/unlock                     25 nanosec
+    - fetch from main memory                100 nanosec
+    - send 2K bytes over 1Gbps network      20,000 nanosec
+    - read 1MB sequentially from memory     250,000 nanosec
+    - fetch from new disk location (seek)   8,000,000 nanosec
+    - read 1MB sequentially from disk       20,000,000 nanosec
+    - send packet US to Europe and back     150 milliseconds = 150,000,000 nanosec
