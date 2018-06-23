@@ -1,0 +1,70 @@
+What is reactive programming?
+
+	It's the latest buzzword to sell you books.
+	It's invented to make you feel that you don't know programming, so that HR can decrease your salary/package.
+
+	But before that:
+		What is a constant?
+		What is a variable?
+		What is a list? (array)
+		What is a file?
+		What is a process?
+		What is a stream?
+		What is a pipe?
+
+	There are two kinds of money: one you can put in a bag; other you cannot.
+		What are the challenges involved in keeping 10 Million Indian Rupees with you?
+		What are the challenges involved in keeping same amount in bank account?
+
+	In terms of observing changes to program state:
+		What are variables or constants?
+		What are pipes and streams?
+
+	Would you rather stand by the microwave owen for 10 minutes, or would you let it notify you when it's done?
+	Would you rather stand by the washing machine for 30 minutes, or would you rather let it notify you after it is done washing and drying?
+
+	The concept of declarative vs imperative.
+		Imperative - specify your actions; (and mostly do them now)
+		Declarative - specify your intentions; (and mostly do them when you get to them)
+
+	Making a cucumber salad imperatively:
+		let fastFood = orderFastFood()
+		let cucumbers = getCucumbersFrom(supermarket)
+		let washedCucumbers = wash(cucumbers)
+		let cutCucumbers = cut(washedCucumbers)
+		let saltedCucumbers = salt(cutCucumbers)
+		let masalaCucumbers = apply(masala, saltedCucumbers)
+		let servedCucumbers = serve(masalaCucumbers)
+		let food = dayIsSaturday ? servedCucumbers : fastFood;
+
+		if (whenReadyToEat && dayIsSaturday) {
+			eat(food)
+		} else {
+			eat(open(food))
+		}
+
+	Making a cucumber salad declaratively:
+		let cucumbers = supermarket.whenThere().filter(cucumbersOnSaturday).buyFood()
+		let salad = cucumbers.forAll().process(item => item.wash().cut().salt().applyMasala())
+		let readyPlate = salad.serve()
+
+        let fastFood = supermarket.whenThere().filter(otherwiseFastFood).buyFood()
+        let readyPlate = fastFood.forEach().open()
+		
+        let food = (Either salad OR fastFood)
+        food.eat()    
+        
+        When you call `food.eat()`, then you understand power of lazy.
+        You might have gone to supermarket earlier or you might have to go now.
+        This is different from imperative, because there you must have gone to supermarket already.
+
+
+	FP
+	- declarative
+	- immutable data; mostly
+
+	Reactive Functional example: ReactiveCocoa
+
+    Reactive = Oberserver Pattern + Iterator Pattern + Error Notification + Complete/Done Notification
+
+    [This is not complete. Visit in a month.]
